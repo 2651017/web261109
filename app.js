@@ -8,7 +8,7 @@ const average = (list) => {
     return sum / list.length;
 }
 console.log("평균:", average(movies));
-//영화 배열 ⇒ 평점이 가장 높은 영화 객체
+// best: 영화 배열 ⇒ 평점이 가장 높은 영화 객체
 const best = (list) => {
     let top = list[0];
     for (const m of list) {
@@ -19,12 +19,12 @@ const best = (list) => {
     return top;
 }
 console.log("최고:", best(movies).title);
-//영화 배열, 최소 평점 ⇒ 그 이상인 영화만 담은 새 배열
+// filterByRating: 영화 배열, 최소 평점 ⇒ 그 이상인 영화만 담은 새 배열
 const filterByRating = (list, min) => {
     return list.filter(m => m.rating >= min);
 }
 console.log("8점 이상:", filterByRating(movies, 8).length + "편");
-//영화 배열 ⇒ 평점 높은 순으로 정렬한 새 배열(원본은 그대로)
+// sortByRating: 영화 배열 ⇒ 평점 높은 순으로 정렬한 새 배열(원본은 그대로)
 const sortByRating = (list) => {
     return [...list].sort((a, b) => b.rating - a.rating);
 }
@@ -32,12 +32,12 @@ const sortByRating = (list) => {
 const sorted = sortByRating(movies);
 console.log("정렬 1위:", sorted[0].title, "/ 원본 1번:", movies[0].title);
 
-//날짜 문자열 ⇒ 올해까지 몇 년(숫자)
+// yearsSince: 날짜 문자열 ⇒ 올해까지 몇 년(숫자)
 const yearsSince = (dateStr) => {
     return new Date().getFullYear() - new Date(dateStr).getFullYear();
 }
 console.log(yearsSince(movies[0].date) + "년 전 개봉");
-//포스터 경로, 크기 ⇒ TMDB 이미지 주소(문자열)
+// posterUrl: 포스터 경로, 크기 ⇒ TMDB 이미지 주소(문자열)
 const posterUrl = (path, size) => {
     return "https://image.tmdb.org/t/p/" + size + path;
 }
