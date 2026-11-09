@@ -3,6 +3,63 @@
 const titles = ["해리 포터와 마법사의 돌", "해리 포터와 비밀의 방", "해리 포터와 아즈카반의 죄수", "해리 포터와 불사조 기사단", "해리 포터와 죽음의 성물 1"];
 const ratings = [7.9, 7.7, 8.0, 7.6, 7.7];
 const years = [2001, 2002, 2004, 2007, 2010];
+
+//선언문으로 함수 정의 하기
+/*function gugudan(dan){
+    for(let i=1; i<10; i++){
+        console.log(`${dan} x ${i} = ${dan*i}`);
+    }
+}
+
+gugudan(7);
+
+
+function add(num1, num2){
+    return num1+num2;
+}
+console.log(add(1234,5678));
+
+function add(num1, num2){
+    return num1+num2;
+}
+console.log(add(1234,5678));
+
+
+/*for(let index of titles){
+    console.log(index);
+}
+*/
+
+//표현식으로 함수 정의 하기
+/*const gugudan = function(dan){
+    for(let i=1; i<10; i++){
+        console.log(`${dan} x ${i} = ${dan*i}`);
+    }
+}
+
+gugudan(7);
+*/
+
+//화살표함수로 함수 정의 하기
+/*const gugudan = dan => {
+    for(let i=1; i<10; i++){
+        console.log(`${dan} x ${i} = ${dan*i}`);
+    }
+}
+
+gugudan(7);
+const add=(num1, num2)=>{
+    return num1+num2;
+}
+console.log(add(1234,5678));
+*/
+
+
+//즉시 실행 함수 만들기
+/*(function init(){
+    console.log("나는 함수다. 실행이 되었다.")
+})();
+*/
 let sum = 0;
 
 for (let i = 0; i < ratings.length; i++) {
@@ -22,7 +79,7 @@ for (let i = 0; i < ratings.length; i++) {
     if (ratings[i] > max){
         max = ratings[i];
         maxIndex = i;
-    }
+    }  
     if (ratings[i] >= 8) count++;
 }
  console.log("최고:", titles[maxIndex], max);
