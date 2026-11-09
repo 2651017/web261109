@@ -30,7 +30,7 @@ for (let i = 0; i < ratings.length; i++) {
 
 for (let i = 0; i < ratings.length; i++) {
    let label;
-    if(ratings[i]>= 8.5) label="명작";
+    if(ratings[i]>= 8.0) label="명작";
    else if(ratings[i]>=7) label="추천";
    else label="보통";
     console.log(titles[i] + " (" + years[i] + "): " + ratings[i] + " " + label);
